@@ -12,6 +12,15 @@
 import _ from 'lodash';
 import Twitter from './twitter.model';
 
+var TwitterAPI = require('twitter');
+
+var client = new TwitterAPI({
+  consumer_key: 'gjwIrqBzHsCFlBA0JQAT12kxp',
+  consumer_secret: 'dXqtTpajQMpBRb47mRcmodTjCAH1d3Fd3JrFW3B2mpm9yYacVH',
+  access_token_key: '582822528-hGdZJMFnsgHr3TTZdVJU40JoYNXZtDeTvJ2i4xjs',
+  access_token_secret: '3ujYfkKxukJLcZJsygO1FkorZXstgv8mjkxU2iAFEXINc'
+});
+
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
   return function(entity) {
@@ -99,4 +108,14 @@ export function destroy(req, res) {
     .then(handleEntityNotFound(res))
     .then(removeEntity(res))
     .catch(handleError(res));
+}
+
+// Return the twitter hashtag information
+export function search(req, res) {
+  client.get('search/tweets', {q: '#' + req.params.value, count: 10},
+      function (error, tweets, response) {
+        res.setHeader('Content-Type', 'application/json');
+        return res.send(JSON.stringify(tweets.statuses, null, 3));
+      }
+  );
 }

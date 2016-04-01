@@ -10,7 +10,7 @@ describe('Component: TwitterComponent', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($componentController, $rootScope) {
     scope = $rootScope.$new();
-    TwitterComponent = $componentController('TwitterComponent', {
+    TwitterComponent = $componentController('twitter', {
       $scope: scope
     });
   }));

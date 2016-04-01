@@ -10,7 +10,7 @@ describe('Component: HashtagComponent', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($componentController, $rootScope) {
     scope = $rootScope.$new();
-    HashtagComponent = $componentController('HashtagComponent', {
+    HashtagComponent = $componentController('hashtag', {
       $scope: scope
     });
   }));

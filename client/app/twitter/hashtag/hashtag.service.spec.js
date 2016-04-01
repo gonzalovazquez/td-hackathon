@@ -7,8 +7,8 @@ describe('Service: hashtag', function () {
 
   // instantiate service
   var hashtag;
-  beforeEach(inject(function (_hashtag_) {
-    hashtag = _hashtag_;
+  beforeEach(inject(function (_hashtagService_) {
+    hashtag = _hashtagService_;
   }));
 
   it('should do something', function () {

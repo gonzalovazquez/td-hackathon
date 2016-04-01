@@ -1,2 +1,4 @@
-<h1>#{{$ctrl.hashtag}}</h1>
-<pre>{{$ctrl.data | json}}</pre>
+<h1 style="padding: 1em; color: darkgreen; font-size: xx-large;">#{{$ctrl.hashtag}}</h1>
+<div ng-repeat="tweet in $ctrl.data.data">
+  <div style="margin: 1em;" class="jumbotron" ng-bind-html="tweet.oEmbed.html"></div>
+</div>

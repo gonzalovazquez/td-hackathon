@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('theSharksApp')
-  .config(function($stateProvider) {
+  .config(function ($stateProvider) {
     $stateProvider
       .state('main', {
-        url: '/',
+        url: '/main',
         template: '<main></main>'
       });
   });

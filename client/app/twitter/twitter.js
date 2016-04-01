@@ -4,7 +4,7 @@ angular.module('theSharksApp')
   .config(function ($stateProvider) {
     $stateProvider
       .state('twitter', {
-        url: '/twitter',
+        url: '/',
         template: '<twitter></twitter>'
       });
   });

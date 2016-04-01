@@ -4,15 +4,17 @@
       <img src="assets/images/shark_logo.svg" alt="I'm Yeoman" style="max-height: 20em;">
     </div>
     <div class="row">
-      <div class="input-group input-group-center"
-           style="max-width: 50em; padding: 2em;">
-        <span class="input-group-addon" id="basic-addon1">#</span>
-        <input type="text" class="form-control input-lg" placeholder="Enter a hashtag to check its stat"
-               aria-describedby="basic-addon1">
-      </div>
-      <div class="input-group input-group-center">
-        <button class="btn btn-google btn-success btn-lg">Check</button>
-      </div>
+      <form ng-submit="$ctrl.checkHashtag()">
+        <div class="input-group input-group-center"
+             style="max-width: 50em; padding: 2em;">
+          <span class="input-group-addon" id="basic-addon1">#</span>
+          <input type="text" class="form-control input-lg" placeholder="Enter a hashtag to check its stat"
+                 aria-describedby="basic-addon1" ng-model="$ctrl.hashtag">
+        </div>
+        <div class="input-group input-group-center">
+          <button type="submit" class="btn btn-google btn-success btn-lg">Check</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

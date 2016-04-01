@@ -1,16 +1,15 @@
 'use strict';
-(function(){
+(function () {
 
-class HashtagComponent {
-  constructor() {
-    this.message = 'Hello';
+  class HashtagComponent {
+    constructor($stateParams) {
+      this.hashtag = $stateParams.hashtag;
+    }
   }
-}
 
-angular.module('theSharksApp')
-  .component('hashtag', {
-    templateUrl: 'app/twitter/hashtag/hashtag.html',
-    controller: HashtagComponent
-  });
-
+  angular.module('theSharksApp')
+    .component('hashtag', {
+      templateUrl: 'app/twitter/hashtag/hashtag.html',
+      controller: HashtagComponent
+    });
 })();

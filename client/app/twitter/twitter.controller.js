@@ -1,16 +1,27 @@
 'use strict';
-(function(){
+(function () {
 
-class TwitterComponent {
-  constructor() {
-    this.message = 'Hello';
+  class TwitterComponent {
+    constructor($state) {
+      this.hashtag = '';
+      this.$state = $state;
+    }
+
+    checkHashtag() {
+      console.log('checking')
+      if (this.hashtag) {
+        var cleanedHashtag = this.hashtag.replace(/ /g, '');
+        if (cleanedHashtag) {
+          this.$state.go('hashtag', {hashtag: cleanedHashtag})
+        }
+      }
+    }
   }
-}
 
-angular.module('theSharksApp')
-  .component('twitter', {
-    templateUrl: 'app/twitter/twitter.html',
-    controller: TwitterComponent
-  });
-
-})();
+  angular.module('theSharksApp')
+    .component('twitter', {
+      templateUrl: 'app/twitter/twitter.html',
+      controller: TwitterComponent
+    });
+})
+();

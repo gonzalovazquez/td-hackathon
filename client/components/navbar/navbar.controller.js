@@ -4,14 +4,14 @@ class NavbarController {
   //start-non-standard
   menu = [{
     'title': 'Home',
-    'state': 'main'
+    'state': 'twitter'
   }];
 
   isCollapsed = true;
   //end-non-standard
 
   constructor() {
-    }
+  }
 }
 
 angular.module('theSharksApp')

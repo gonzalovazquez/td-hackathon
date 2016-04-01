@@ -8,7 +8,6 @@
     }
 
     checkHashtag() {
-      console.log('checking')
       if (this.hashtag) {
         var cleanedHashtag = this.hashtag.replace(/ /g, '');
         if (cleanedHashtag) {

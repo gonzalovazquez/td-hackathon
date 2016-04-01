@@ -1,6 +1,8 @@
 'use strict';
 
 angular.module('theSharksApp')
-  .service('hashtag', function () {
-    // AngularJS will instantiate a singleton by calling "new" on this function
+  .service('hashtagService', function ($http) {
+    this.getHashtagStat = function (hashtag) {
+      return $http.get(`api/twitters/hashtag/${hashtag}`);
+    }
   });

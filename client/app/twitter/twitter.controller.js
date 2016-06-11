@@ -1,10 +1,15 @@
 'use strict';
-(function () {
+(function() {
 
   class TwitterComponent {
-    constructor($state) {
+    constructor($state, $firebaseObject) {
       this.hashtag = '';
       this.$state = $state;
+      this.$firebaseObject = $firebaseObject;
+
+      console.log($firebaseObject);
+      this.data = this.$firebaseObject(new Firebase("https://iubadminton.firebaseio.com/playing_locations"));
+      console.log(this.data);
     }
 
     checkHashtag() {

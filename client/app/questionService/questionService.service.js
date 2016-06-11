@@ -230,7 +230,7 @@ angular.module('theSharksApp.questionService')
   .service('questionService', function($firebaseArray) {
     this.getQuestions = () => {
       var ref = new Firebase("https://tdChorus.firebaseio.com/questions");
-      return $firebaseArray(ref);
+      $firebaseArray(ref);
       return fakeData;
     };
 

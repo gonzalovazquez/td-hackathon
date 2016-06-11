@@ -1,19 +1,20 @@
 <div>
   <div class="container-fluid">
     <div class="row">
-        <div class="row">
-          <div class="col-md-12">
-              <img class="touch-to-speak center-block" src="assets/images/microphone-hover.svg" alt="I'm Yeoman" style="max-height: 20em;" ng-touch="$ctrl.listen()" ng-mouseup="$ctrl.stop()">
-          </div>
+      <div class="row">
+        <div class="col-md-12">
+          <img class="touch-to-speak center-block" src="assets/images/microphone-hover.svg" alt="I'm Yeoman"
+               style="max-height: 20em;" ng-click="$ctrl.listen()" ng-mouseup="$ctrl.stop()">
         </div>
-        <div class="row">
-          <div class="col-md-6 col-md-offset-3">
-            <h1 id="recognizedText"></h1>
-          </div>
-          <div class="col-md-6 col-md-offset-3">
-            <question value="$ctrl.question" ng-if="$ctrl.question"/>
-          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <h1 id="recognizedText"></h1>
         </div>
+        <div class="col-md-6 col-md-offset-3">
+          <question value="$ctrl.question" ng-if="$ctrl.question"/>
+        </div>
+      </div>
     </div>
   </div>
 </div>

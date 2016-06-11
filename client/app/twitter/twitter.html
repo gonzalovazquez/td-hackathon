@@ -1,13 +1,9 @@
 <div>
   <div class="container-fluid">
     <div class="row">
-      <img src="assets/images/shark_logo.svg" alt="I'm Yeoman" style="max-height: 20em;">
-    </div>
-    <div class="row">
-      <form ng-submit="$ctrl.checkHashtag()">
         <div class="row">
           <div class="col-md-12">
-            <img class="img-responsive center-block" src="img/microphone.png" id="button" alt="">
+              <img class="touch-to-speak center-block" src="assets/images/microphone-hover.svg" alt="I'm Yeoman" style="max-height: 20em;" ng-click="$ctrl.listen()">
           </div>
         </div>
         <div class="row">
@@ -15,49 +11,6 @@
             <h1 id="recognizedText"></h1>
           </div>
         </div>
-      </form>
     </div>
   </div>
 </div>
-
-<script>
-  var speech = SpeechToText;
-  var activeSTT;
-
-  function stopListening() {
-    if (activeSTT) {
-      activeSTT.stop();
-      activeSTT = null;
-    }
-  }
-  function listen() {
-    speech.listen({
-      onStart: function() {
-        console.log('starting');
-      },
-      onResult: function(e) {
-        console.log(e.text);
-        document.getElementById("recognizedText").innerHTML = e.text;
-        if (e.isFinal) {
-          stopListening();
-        }
-      },
-      onError: function(e) {
-        console.log('error', e);
-      },
-      onEnd: function(e) {
-        console.log('end', e);
-        stopListening();
-      }
-    });
-  }
-
-  document.querySelector('#button').onclick = function() {
-    if (speech.isSupported) {
-      listen();
-    } else {
-      alert('speech not supported by this browser');
-    }
-  };
-
-</script>

@@ -1,6 +1,7 @@
 'use strict';
 (function() {
    var _questionInterpreter;
+   var _self;
    
   class TwitterComponent {  
     constructor($state, $firebaseObject, questionInterpreter) {
@@ -9,25 +10,21 @@
       this.$state = $state;
       this.$firebaseObject = $firebaseObject;
       _questionInterpreter = questionInterpreter;
-
-      console.log($firebaseObject);
-      this.data = this.$firebaseObject(new Firebase("https://iubadminton.firebaseio.com/playing_locations"));
-      console.log(this.data);
-      console.log(_questionInterpreter.interpret("This is my  question"));
-
       this.speech = SpeechToText;
       this.activeSTT;
-
+      _self = this;
+      
     }
 
     listen() {
         this.speech.listen({
           onStart: function() {
+            alert('Chau');
             console.log('starting');
           },
           onResult: function(e) {
             console.log(e.text);
-            _questionInterpreter.interpret(e.text);
+            _self.question = _questionInterpreter.interpret(e.text);
             document.getElementById("recognizedText").innerHTML = e.text;
             if (e.isFinal) {
               if (activeSTT) {
@@ -40,7 +37,9 @@
             console.log('error', e);
           },
           onEnd: function(e) {
-            console.log('end', e);
+            
+            console.log('FINISH!!!!', e);
+            
             if (activeSTT) {
               activeSTT.stop();
               activeSTT = null;
@@ -49,14 +48,11 @@
         });
     }
 
-    checkHashtag() {
-      if (this.hashtag) {
-        var cleanedHashtag = this.hashtag.replace(/ /g, '');
-        if (cleanedHashtag) {
-          this.$state.go('hashtag', {hashtag: cleanedHashtag})
-        }
-      }
+    stop() {
+      console.log('stopped');
     }
+
+
   }
 
   angular.module('theSharksApp')

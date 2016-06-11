@@ -4,7 +4,6 @@ angular.module('theSharksApp.searchEngine')
   .service('answerMatcher', function(questionService) {
     this.match = (keywords) => {
       var uniqueKeywords = Array.from(new Set(keywords));
-
       var questions = questionService.getQuestions();
       return questions.map(question => {
         return {

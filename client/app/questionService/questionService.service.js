@@ -226,8 +226,14 @@ var fakeData = [
 ];
 
 angular.module('theSharksApp.questionService')
-  .service('questionService', function() {
+  .service('questionService', function($firebaseArray) {
     this.getQuestions = () => {
       return fakeData;
+    };
+
+    this.initData = () => {
+      var ref = new Firebase("https://tdChorus.firebaseio.com/questions");
+      var questions = $firebaseArray(ref);
+      fakeData.forEach(q => questions.$add(q));
     };
   });

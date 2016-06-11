@@ -2,11 +2,13 @@
 
 angular.module('theSharksApp.questionService', []);
 angular.module('theSharksApp.searchEngine', []);
+angular.module('theSharksApp.question', []);
 
 angular.module('theSharksApp', [
     'theSharksApp.constants',
     'theSharksApp.questionService',
     'theSharksApp.searchEngine',
+    'theSharksApp.question',
     'ngCookies',
     'ngResource',
     'ngSanitize',

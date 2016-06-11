@@ -1,16 +1,15 @@
 'use strict';
 
-angular.module('theSharksApp.questions')
-  .directive('question', function (questionService) {
+angular.module('theSharksApp.question')
+  .directive('question', function() {
     return {
       templateUrl: 'app/question/question.html',
       restrict: 'EA',
       scope: {
-        question: '='
+        value: '='
       },
-      link: function (scope, element, attrs) {
-        scope.question = questionService.getQuestions()[0];
-        console.log(scope.question);
+      link: function(scope, element, attrs) {
+        console.log(scope.value);
       }
     };
   });

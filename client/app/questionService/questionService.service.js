@@ -2,7 +2,7 @@
 
 var fakeData = [
   {
-    "keyWords": [
+    "keywords": [
       "biggest",
       "tv",
       "boardroom",
@@ -226,7 +226,7 @@ var fakeData = [
 ];
 
 angular.module('theSharksApp.questionService')
-  .service('questionService', function () {
+  .service('questionService', function() {
     this.getQuestions = () => {
       return fakeData;
     };

@@ -1,6 +1,7 @@
 
-<h3 ng-repeat='answer in value.answers track by $index'>#{{ $index + 1}} - {{answer.answer}}</h3>
-
-<pre>
-{{ value | json}}
-</pre>
+<div>
+<p style="margin: 1em;" ng-repeat='answer in value.answers track by $index'><strong style="font-weight: bold;">#{{ $index + 1 }}</strong> {{answer.answer}}
+<br>
+<span style="margin-left: 10em;">Up: <span style="color: green;">{{answer.rating.upVote}}</span> Down: <span style="color: red;">{{answer.rating.downVote}}</span></span>
+</p>
+</div>

@@ -5,7 +5,13 @@ angular.module('theSharksApp.questionAnswerList')
     return {
       templateUrl: 'app/questionAnswerList/questionAnswerList.html',
       restrict: 'EA',
+      scope: {
+        questions: '='
+      }
       link: function (scope, element, attrs) {
+
+        console.log(scope.questions);
+
       }
     };
   });

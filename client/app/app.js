@@ -7,7 +7,8 @@ angular.module('theSharksApp', [
   'ngSanitize',
   'btford.socket-io',
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'firebase'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider

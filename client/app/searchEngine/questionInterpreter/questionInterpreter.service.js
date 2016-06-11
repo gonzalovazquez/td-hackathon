@@ -1,6 +1,8 @@
 'use strict';
 
 angular.module('theSharksApp.searchEngine')
-  .service('questionInterpreter', function () {
-    // AngularJS will instantiate a singleton by calling "new" on this function
+  .service('questionInterpreter', function(answerMatcher) {
+    this.interpret = (question) => {
+      return answerMatcher.match(question.trim().split(/ +/).map(k => k.toLowerCase()));
+    };
   });

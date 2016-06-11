@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('theSharkApp.searchEngine')
-  .service('answerMatcher', function () {
+angular.module('theSharksApp.searchEngine')
+  .service('answerMatcher', function() {
     // AngularJS will instantiate a singleton by calling "new" on this function
   });

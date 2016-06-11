@@ -5,22 +5,62 @@
     </div>
     <div class="row">
       <form ng-submit="$ctrl.checkHashtag()">
-        <div class="input-group input-group-center"
-             style="max-width: 50em; padding: 2em;">
-          <span class="input-group-addon" id="basic-addon1">#</span>
-          <input type="text" class="form-control input-lg" placeholder="Enter a hashtag to check its stat"
-                 aria-describedby="basic-addon1" ng-model="$ctrl.hashtag">
+        <div class="row">
+          <div class="col-md-12">
+            <img class="img-responsive center-block" src="img/microphone.png" id="button" alt="">
+          </div>
         </div>
-        <div class="input-group input-group-center">
-          <button type="submit" class="btn btn-google btn-success btn-lg">Check</button>
+        <div class="row">
+          <div class="col-md-12">
+            <h1 id="recognizedText"></h1>
+          </div>
         </div>
       </form>
     </div>
   </div>
 </div>
 
-<question />
+<question/>
 
-<pre>
-  {{ $ctrl.data | json}}
-</pre>
+<script>
+  var speech = SpeechToText;
+  var activeSTT;
+
+  function stopListening() {
+    if (activeSTT) {
+      activeSTT.stop();
+      activeSTT = null;
+    }
+  }
+  function listen() {
+    speech.listen({
+      onStart: function() {
+        console.log('starting');
+      },
+      onResult: function(e) {
+        console.log(e.text);
+        document.getElementById("recognizedText").innerHTML = e.text;
+        if (e.isFinal) {
+          stopListening();
+        }
+      },
+      onError: function(e) {
+        console.log('error', e);
+      },
+      onEnd: function(e) {
+        console.log('end', e);
+        stopListening();
+      }
+    });
+  }
+
+  document.querySelector('#button').onclick = function() {
+    if (speech.isSupported) {
+      listen();
+    } else {
+      alert('speech not supported by this browser');
+    }
+  };
+
+</script>
+>>>>>>> master

@@ -5,7 +5,7 @@ angular.module('theSharksApp.searchEngine')
     this.match = (keywords) => {
       var uniqueKeywords = Array.from(new Set(keywords));
       var questions = questionService.getQuestions();
-      return questions.map(question => {
+      var matchedQuestion = questions.map(question => {
         return {
           matchCount: uniqueKeywords.filter(k => question.keywords.indexOf(k) >= 0).length,
           question: question
@@ -20,6 +20,12 @@ angular.module('theSharksApp.searchEngine')
         }
 
         return prev;
-      }).question;
+      });
+
+      if (matchedQuestion.matchCount > 0) {
+        matchedQuestion.question;
+      }
+
+      return null;
     };
   });

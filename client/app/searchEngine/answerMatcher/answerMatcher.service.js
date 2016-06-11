@@ -23,7 +23,7 @@ angular.module('theSharksApp.searchEngine')
       });
 
       if (matchedQuestion.matchCount > 0) {
-        matchedQuestion.question;
+        return matchedQuestion.question;
       }
 
       return null;

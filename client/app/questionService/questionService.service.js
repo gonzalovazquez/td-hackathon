@@ -4,9 +4,12 @@ var fakeData = [
   {
     "keyWords": [
       "biggest",
-      "TV",
+      "tv",
       "boardroom",
-      "TD South"
+      "board",
+      "room",
+      "td",
+      "south"
     ],
     "answers": [
       {
@@ -57,7 +60,7 @@ var fakeData = [
   },
   {
     "keywords": [
-      "Rizwan",
+      "rizwan",
       "like",
       "basketball"
     ],
@@ -87,8 +90,8 @@ var fakeData = [
   },
   {
     "keywords": [
-      "Teri",
-      "Currie",
+      "teri",
+      "currie",
       "study",
       "university"
     ],
@@ -114,7 +117,7 @@ var fakeData = [
       "chequing",
       "account",
       "incentive",
-      "TD"
+      "td"
     ],
     "answers": [
       {
@@ -143,7 +146,8 @@ var fakeData = [
   {
     "keywords": [
       "help",
-      "Fort McMurray"
+      "fort",
+      "mcmurray"
     ],
     "answers": [
       {
@@ -171,9 +175,13 @@ var fakeData = [
   },
   {
     "keywords": [
-      "TD MySpend",
+      "td",
+      "myspend",
+      "my",
+      "spend",
       "rank",
-      "app store"
+      "app",
+      "store"
     ],
     "answers": [
       {
@@ -196,7 +204,7 @@ var fakeData = [
     "keywords": [
       "mortgage",
       "calculator",
-      "TD"
+      "td"
     ],
     "answers": [
       {
